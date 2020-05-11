@@ -1,6 +1,6 @@
-import {createStackNavigator} from 'react-navigation';
 import ViewA from '../views/ViewA';
 import ViewB from '../views/ViewB';
+import {createStackNavigator} from '@react-navigation/stack';
 // authentication views
 
 const ViewNavigator = createStackNavigator(
