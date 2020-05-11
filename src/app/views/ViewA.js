@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, Button} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import ReloadInstructions from 'react-native/Libraries/NewAppScreen/components/ReloadInstructions';
 
-class ViewA extends PureComponent {
+class ViewA extends React.Component {
   props: {};
   render() {
     return (

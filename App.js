@@ -8,24 +8,37 @@
 
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import {createSwitchNavigator} from 'react-navigation';
-
-const SwitchNavigator = createSwitchNavigator(
-  {
-    Login: ViewNavigator,
-  },
-  {
-    initialRouteName: 'Login',
-  },
-);
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import ViewNavigator from './src/app/navigator/TestNavigator';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import NavigationContainer from '@react-navigation/native/src/NavigationContainer';
+import ViewA from './src/app/views/ViewA';
+import ViewB from './src/app/views/ViewB';
+import {createStackNavigator} from '@react-navigation/stack';
+import {TestNavigator} from './src/app/navigator/TestNavigator';
+
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+function Root() {
+  return (
+    <Stack.Navigator
+      initialRouteName="A"
+      screenOptions={{gestureEnabled: false}}>
+      <Stack.Screen name="A" component={ViewA} options={{title: 'A'}} />
+      <Stack.Screen name="B" component={ViewB} initialParams={{user: 'B'}} />
+    </Stack.Navigator>
+  );
+}
 
 const App: () => React$Node = () => {
   return (
     <>
-      <SwitchNavigator />
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={TestNavigator} />
+        </Tab.Navigator>
+      </NavigationContainer>
     </>
   );
 };

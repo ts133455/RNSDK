@@ -4,7 +4,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import DebugInstructions from 'react-native/Libraries/NewAppScreen/components/DebugInstructions';
 import LearnMoreLinks from 'react-native/Libraries/NewAppScreen/components/LearnMoreLinks';
 
-class ViewB extends PureComponent {
+class ViewB extends React.Component {
   props: {};
   render() {
     return (
