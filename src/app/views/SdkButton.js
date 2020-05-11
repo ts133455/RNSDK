@@ -16,11 +16,7 @@ const SwitchNavigator = createSwitchNavigator(
 class SdkButton extends PureComponent {
   props: {};
   render() {
-    return (
-      <View style={styles.body}>
-        <SwitchNavigator />
-      </View>
-    );
+    return <SwitchNavigator />;
   }
 }
 
